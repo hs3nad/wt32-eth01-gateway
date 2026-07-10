@@ -20,6 +20,8 @@ static const char* TAG = "gateway-ota";
 static constexpr EventBits_t OTA_NETWORK_READY_BIT = BIT0;
 static constexpr size_t OTA_MANIFEST_MAX_BYTES = 2048;
 static constexpr int OTA_HTTP_TIMEOUT_MS = 10000;
+static constexpr int OTA_HTTP_RX_BUFFER = 8192;
+static constexpr int OTA_HTTP_TX_BUFFER = 1024;
 static constexpr int OTA_TASK_STACK = 8192;
 
 struct OtaManifest {
@@ -76,6 +78,8 @@ static esp_err_t fetchManifest(char* buffer, size_t bufferLen) {
   esp_http_client_config_t config = {};
   config.url = GATEWAY_OTA_MANIFEST_URL;
   config.timeout_ms = OTA_HTTP_TIMEOUT_MS;
+  config.buffer_size = OTA_HTTP_RX_BUFFER;
+  config.buffer_size_tx = OTA_HTTP_TX_BUFFER;
   config.crt_bundle_attach = esp_crt_bundle_attach;
   config.user_agent = "wt32-eth01-gateway/" GATEWAY_FW_VERSION;
   config.keep_alive_enable = true;
@@ -161,6 +165,8 @@ static esp_err_t performOta(const OtaManifest& manifest) {
   esp_http_client_config_t httpConfig = {};
   httpConfig.url = manifest.firmwareUrl;
   httpConfig.timeout_ms = OTA_HTTP_TIMEOUT_MS;
+  httpConfig.buffer_size = OTA_HTTP_RX_BUFFER;
+  httpConfig.buffer_size_tx = OTA_HTTP_TX_BUFFER;
   httpConfig.crt_bundle_attach = esp_crt_bundle_attach;
   httpConfig.user_agent = "wt32-eth01-gateway/" GATEWAY_FW_VERSION;
   httpConfig.keep_alive_enable = true;
