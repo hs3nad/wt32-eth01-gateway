@@ -36,10 +36,11 @@ Edit `include/config.h`:
 #define GATEWAY_ID "Room001"
 #define GATEWAY_HOSTNAME GATEWAY_ID
 #define FLOOR_ID 2
+#define GATEWAY_FW_VERSION "0.4.2"
 #define MODBUS_TCP_PORT 502
 #define MODBUS_UNIT_ID 1
 #define ETH_RCU_DEVICE_ID 0x31
-#define GATEWAY_OTA_MANIFEST_URL ""
+#define GATEWAY_OTA_MANIFEST_URL "https://raw.githubusercontent.com/hs3nad/wt32-eth01-gateway/main/docs/gateway_ota.json"
 ```
 
 `GATEWAY_HOSTNAME` is the DHCP hostname shown on the LAN. By default it follows
@@ -47,8 +48,10 @@ Edit `include/config.h`:
 network name. The firmware also responds to NetBIOS name queries with the same
 name, which helps Windows LAN scanners such as Advanced IP Scanner display it.
 
-`GATEWAY_OTA_MANIFEST_URL` points to the raw GitHub JSON manifest used by auto
-OTA. Leave it empty to disable update checks. See
+`GATEWAY_OTA_MANIFEST_URL` points to the public raw GitHub JSON manifest used by
+auto OTA. Leave it empty to disable update checks. The tested OTA path updated a
+real gateway from `0.4.1` to `0.4.2`, wrote the new image to `ota_1`, and
+rebooted from offset `0x400000`. See
 [`../docs/ota_update.md`](../docs/ota_update.md).
 
 ## Modbus Register Map

@@ -26,6 +26,7 @@ PS18V62_2 RCU
 - Modbus TCP exposes `Inpbuf[0..5]` and `Outbuf[0..11]` using the RCU register map.
 - Modbus coils mirror real `Outbuf[0..10]` bits; `Outbuf[11]` is not exposed as coils.
 - `Outbuf[11]` is the gateway-owned room/node ID and is persisted in ESP32 flash using NVS.
+- Auto OTA is enabled through a public GitHub raw manifest and dual OTA app partitions.
 - The register map source of truth is [register_map.md](register_map.md).
 
 ## State Ownership

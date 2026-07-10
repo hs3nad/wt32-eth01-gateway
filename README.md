@@ -30,6 +30,7 @@ docs/                Documentation for this repository
 - [System Overview](docs/system_overview.md)
 - [PS18V62_2 Bus Protocol](docs/ps18v62_2_bus.md)
 - [Hardware](docs/hardware.md)
+- [Gateway Auto OTA](docs/ota_update.md)
 - [Register Map](docs/register_map.md)
 - [WT32-ETH01 Pinout and Wiring](docs/wt32_eth01_pinout_and_wiring.md)
 - [Gateway Firmware](gateway/README.md)
@@ -67,3 +68,10 @@ Input     = RCU Inpbuf[0..5]
 Packing   = high byte is odd index, low byte is even index
 Control   = holding register 2 low byte = Outbuf[4]
 ```
+
+## OTA Status
+
+The gateway firmware is currently `0.4.2`. Auto OTA has been tested on real
+hardware through a public GitHub raw manifest and dual OTA partitions. The
+confirmed test updated a gateway from `0.4.1` to `0.4.2` and booted the new
+image from `ota_1` at `0x400000`.
