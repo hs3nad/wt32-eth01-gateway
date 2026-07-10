@@ -1,0 +1,42 @@
+# OS / editors
+.DS_Store
+.vscode/.browse.c_cpp.db*
+.vscode/ipch/
+
+# PlatformIO
+.pio/
+.vscode/.pio
+
+# Go
+bin/
+*.test
+coverage.out
+
+# Flutter/Dart
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+
+# Runtime
+*.log
+.env
+
+# ESP-IDF
+build-wt32/
+gateway/build-wt32/
+gateway/managed_components/
+gateway/sdkconfig.old
+
+# MPLAB / XC generated output
+rcu/MPLABXLog.xml
+rcu/build/
+rcu/dist/
+rcu/nbproject/private/
+rcu/*.hex
+rcu/*.elf
+rcu/*.map
+rcu/*.o
+rcu/*.d

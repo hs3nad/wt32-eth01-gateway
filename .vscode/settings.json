@@ -1,0 +1,11 @@
+{
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/gateway/build-wt32/compile_commands.json",
+  "C_Cpp.default.compilerPath": "/home/kaina/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-g++",
+  "C_Cpp.default.configurationProvider": "",
+  "C_Cpp.default.intelliSenseMode": "linux-gcc-x86",
+  "C_Cpp.default.cppStandard": "gnu++26",
+  "C_Cpp.default.cStandard": "gnu23",
+  "files.associations": {
+    "*.h": "cpp"
+  }
+}
