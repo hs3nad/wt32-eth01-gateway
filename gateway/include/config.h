@@ -12,7 +12,7 @@
 #define GATEWAY_PROTOCOL_MODE "modbus_tcp"
 
 #define GATEWAY_OTA_ENABLED 1
-#define GATEWAY_OTA_MANIFEST_URL ""
+#define GATEWAY_OTA_MANIFEST_URL "https://raw.githubusercontent.com/hs3nad/wt32-eth01-gateway/main/docs/gateway_ota.json"
 #define GATEWAY_OTA_CHECK_INTERVAL_MS (6UL * 60UL * 60UL * 1000UL)
 #define GATEWAY_OTA_FIRST_CHECK_DELAY_MS (30UL * 1000UL)
 
